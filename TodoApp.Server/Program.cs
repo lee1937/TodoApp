@@ -14,9 +14,6 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(
     options => options.SerializerSettings.ContractResolver=new DefaultContractResolver());
 
-// Grab secrets
-var dbConnString = builder.Configuration["ConnectionStrings:todoAppDBCon"];
-
 var app = builder.Build();
 
 // Enable CORS
